@@ -1,19 +1,13 @@
----
-execution:
-- concurrency: 50
-  hold-for: 3m
-  ramp-up: 2m
-  
-  scenario: choose flight
-scenarios:
-  Choose Flight:
-    requests:
-    - label: blazedemo
-      method: GET
-      url: http://blazedemo.com/
-    - label: reserve
-      method: POST
-      url: http://blazedemo.com/reserve.php
-      body:
-        fromPort: Paris
-        toPort: Buenos Aires
+apiVersion: v1
+
+kind: Pod                                            
+
+metadata:
+  name: devops                                       
+  labels:
+    env: prod
+
+spec:
+  containers:
+    - name: devops
+      image: nginx 
